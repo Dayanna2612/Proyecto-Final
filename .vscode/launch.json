@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MenuUI",
+            "request": "launch",
+            "mainClass": "view.MenuUI",
+            "projectName": "SimuladorProcesosAeroportuarios_f99cfc6e"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "view.Main",

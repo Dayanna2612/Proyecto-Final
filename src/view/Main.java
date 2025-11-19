@@ -29,20 +29,21 @@ public class Main {
 
                 case 1:
                 case 2:
-                    System.out.print("Código: ");
+                    System.out.print("Codigo: ");
                     String cod = sc.next();
-                    System.out.print("Origen: ");
-                    String ori = sc.next();
+
                     System.out.print("Destino: ");
                     String des = sc.next();
-                    System.out.print("Hora: ");
-                    String h = sc.next();
 
-                    Vuelo v = new Vuelo(cod, ori, des, h);
+                    System.out.print("Prioridad: ");
+                    int p = sc.nextInt();
+
+                    Vuelo v = new Vuelo(cod, des, p);
 
                     if (opcion == 1) controlador.agregarVueloListaGlobal(v);
                     else controlador.encolarVuelo(v);
-                    break;
+
+                    break;   // <-- IMPORTANTE
 
                 case 3:
                     vueloEnEjecucion = controlador.moverAEnEjecucion();
@@ -56,7 +57,8 @@ public class Main {
                     if (vueloEnEjecucion == null)
                         System.out.println("No hay vuelo en ejecución.");
                     else {
-                        controlador.finalizarVuelo(vueloEnEjecucion);
+                        controlador.finDeEjecucion(vueloEnEjecucion);
+
                         System.out.println("Vuelo finalizado.");
                         vueloEnEjecucion = null;
                     }
@@ -73,4 +75,3 @@ public class Main {
         System.out.println("Programa terminado.");
     }
 }
-
